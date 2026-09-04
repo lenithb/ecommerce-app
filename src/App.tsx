@@ -7,10 +7,11 @@ import { ProductDetail } from "./pages/ProductDetail";
 import { About } from "./pages/About";
 import { Login } from "./pages/Login";
 import { NotFound } from "./pages/NotFound";
-import { AuthProvider } from "./context/AuthContext";
-import { ProductProvider } from "./context/ProductContext";
+import { AuthProvider } from "./context/AuthProvider";
+import { ProductProvider } from "./context/ProductProvider";
 
-// lo que aparezca en rojo es lo faltante según typescript
+// acá en teoría ya estan todos los imports, no se olviden que esto es SPA (una sola pagina).
+
 function App() {
   return (
     <AuthProvider>

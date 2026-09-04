@@ -1,15 +1,18 @@
-import teamPhoto1 from "../assets/team/member1.jpg";
-import teamPhoto2 from "../assets/team/member2.jpg";
-// vamos a tener que ir agregando más fotos acá abajo 🡣
+// página del equipo
 
-interface TeamMember {
+export interface TeamMember {
   name: string;
   photo: string;
   role?: string;
 }
 
-// acá empieza el const
+// cuando agreguen las fotos a src/assets/team/ importarlas acá abajo 🡣
+// ej: import lenith.png, carlos.png from "../assets/team/lenith.png";
 
 // ---------------------------------
+// acá va el: const team: TeamMember[] = [ ... ]
+// después el export function About con el return y todo eso
 
-// despues el export function about con el return y todo eso
+export function About() {
+  return <main>About</main>;
+}
