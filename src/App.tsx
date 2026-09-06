@@ -5,7 +5,7 @@ import { Home } from "./pages/Home";
 import { AdminPanel } from "./pages/AdminPanel";
 import { ProductDetail } from "./pages/ProductDetail";
 import { About } from "./pages/About";
-import { Login } from "./pages/Login";
+import Login from "./pages/Login";
 import { NotFound } from "./pages/NotFound";
 import { AuthProvider } from "./context/AuthProvider";
 import { ProductProvider } from "./context/ProductProvider";
