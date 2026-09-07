@@ -1,30 +1,25 @@
-import { useState, useContext, type FormEvent } from "react";
-import { AuthContext } from "../context/AuthContext";
+import { useForm } from "react-hook-form";
 import { useNavigate, Link } from "react-router-dom";
 
-const Login = () => {
+interface LoginFormInputs {
+  correo: string;
+  password: string;
+}
+
+const LoginScreen = () => {
   const navigate = useNavigate();
-  const { autentication } = useContext(AuthContext) as any;
 
-  // Mantengo los estados estructurados de forma independiente
-  const [correo, setCorreo] = useState<string>("");
-  const [password, setPassword] = useState<string>("");
-  const [errorVisible, setErrorVisible] = useState<boolean>(false);
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<LoginFormInputs>();
 
-  const handleSubmit = (e: FormEvent<HTMLFormElement>) => {
-    e.preventDefault();
-    setErrorVisible(false);
-
-    //  función logica  de validación
-    const validar = autentication(correo, password);
-
-    if (validar.ok) {
-      console.log("logIn");
-      navigate("/");
-    } else {
-      console.log("Usuario o contraseña incorrectos");
-      setErrorVisible(true);
-    }
+  // Logica para guardar en el localStorage
+  const formSubmit = (data: LoginFormInputs) => {
+    const { correo } = data;
+    localStorage.setItem("user", JSON.stringify(correo));
+    navigate("/");
   };
 
   return (
@@ -46,7 +41,6 @@ const Login = () => {
             </span>
           </div>
 
-          {/* Corrección: Corregido espacio en el string de la variable CSS */}
           <h1
             style={{ color: "var(--text-h)" }}
             className="text-xl font-black tracking-[0.2em] uppercase"
@@ -55,15 +49,11 @@ const Login = () => {
           </h1>
         </div>
 
-        {errorVisible && (
-          <div className="mb-4 p-3 bg-red-500/10 border border-red-500/20 text-red-400 text-xs font-semibold rounded-xl text-left">
-            ⚠️ Usuario o contraseña incorrectos
-          </div>
-        )}
-
-        <form onSubmit={handleSubmit} className="space-y-5 text-left">
+        <form
+          onSubmit={handleSubmit(formSubmit)}
+          className="space-y-5 text-left"
+        >
           <div className="flex flex-col gap-1.5">
-            {/* Color del texto sincronizado con tus variables */}
             <label
               style={{ color: "var(--text)" }}
               className="text-[11px] font-black uppercase tracking-widest pl-1"
@@ -76,17 +66,25 @@ const Login = () => {
                 borderColor: "var(--border)",
                 background: "var(--bg)",
               }}
-              className="w-full border rounded-xl px-4 py-3 text-sm placeholder-slate-500 transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+              className="w-full border rounded-xl px-4 py-3 text-sm  transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
               type="email"
               placeholder="Escribe tu correo electrónico"
-              value={correo}
-              onChange={(e) => setCorreo(e.target.value)}
-              required
+              {...register("correo", {
+                required: "El campo es obligatorio",
+                pattern: {
+                  value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/,
+                  message: "Formato de correo inválido",
+                },
+              })}
             />
+            {errors.correo && (
+              <p className="text-red-500 text-xs font-semibold pl-1 mt-1">
+                {errors.correo.message}
+              </p>
+            )}
           </div>
 
           <div className="flex flex-col gap-1.5">
-            {/* Color del texto sincronizado con tus variables */}
             <label
               style={{ color: "var(--text)" }}
               className="text-[11px] font-black uppercase tracking-widest pl-1"
@@ -99,17 +97,27 @@ const Login = () => {
                 borderColor: "var(--border)",
                 background: "var(--bg)",
               }}
-              className="w-full border rounded-xl px-4 py-3 text-sm placeholder-slate-500 transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+              className="w-full border rounded-xl px-4 py-3 text-sm placeholder-•••••••• transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
               type="password"
               placeholder="••••••••"
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-              required
+              {...register("password", {
+                required: "El campo es obligatorio",
+                pattern: {
+                  value:
+                    /^(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$/,
+                  message:
+                    "La contraseña debe tener al menos 8 caracteres, una mayúscula, un número y un símbolo",
+                },
+              })}
             />
+            {errors.password && (
+              <p className="text-red-500 text-xs font-semibold pl-1 mt-1 max-w-xs leading-relaxed">
+                {errors.password.message}
+              </p>
+            )}
           </div>
 
           <div className="pt-2 grid">
-            {/* El botón principal ahora usa tu color primario y el texto se adapta a tu fondo */}
             <button
               style={{ backgroundColor: "var(--accent)", color: "var(--bg)" }}
               className="w-full font-black text-xs uppercase py-3.5 px-4 rounded-xl transition-all duration-200 cursor-pointer shadow-[0_4px_15px_var(--accent-border)] hover:opacity-90 transform active:scale-[0.99]"
@@ -126,7 +134,7 @@ const Login = () => {
           <p style={{ color: "var(--text)" }} className="text-xs font-semibold">
             ¿Problemas con el servidor?{" "}
             <Link
-              to="*"
+              to="/help"
               style={{ color: "var(--accent)" }}
               className="font-black hover:underline transition-colors ml-1"
             >
@@ -139,4 +147,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginScreen;
