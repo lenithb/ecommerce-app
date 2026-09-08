@@ -81,9 +81,9 @@ export const Navbar = () => {
             <span
               style={{
                 backgroundColor: "var(--accent)",
-                ringColor: "var(--bg)",
+                boxShadow: "0 0 0 2px var(--bg)",
               }}
-              className="absolute top-1 right-1 h-2 w-2 rounded-full ring-2"
+              className="absolute top-1 right-1 h-2 w-2 rounded-full"
             ></span>
           </Link>
 

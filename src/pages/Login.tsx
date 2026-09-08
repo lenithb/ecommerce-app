@@ -4,7 +4,7 @@ import { useNavigate, Link } from "react-router-dom";
 
 const Login = () => {
   const navigate = useNavigate();
-  const { autentication } = useContext(AuthContext) as any;
+  const { login } = useContext(AuthContext)!;
 
   // Mantengo los estados estructurados de forma independiente
   const [correo, setCorreo] = useState<string>("");
@@ -15,10 +15,9 @@ const Login = () => {
     e.preventDefault();
     setErrorVisible(false);
 
-    //  función logica  de validación
-    const validar = autentication(correo, password);
+    const validar = login(correo, password);
 
-    if (validar.ok) {
+    if (validar) {
       console.log("logIn");
       navigate("/");
     } else {
