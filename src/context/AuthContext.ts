@@ -11,6 +11,6 @@ export const AuthContext = createContext<AuthContextType | undefined>(
   undefined,
 );
 
-// Para consumir de un componente/página:
+// Para empezar a consumir de un componente/página:
 //   const auth = useContext(AuthContext)
 //   auth.login(...) / auth.logout() / auth.isAdmin
