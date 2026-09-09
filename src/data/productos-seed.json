@@ -23,7 +23,7 @@
     "precio": 19999,
     "categoria": "Acción",
     "imagen": "/src/assets/gta.webp",
-    "descripcion": "Reserva ahora la increible aventura de Miami",
+    "descripcion": "Reserva ahora la increíble aventura de Miami.",
     "stock": 20
   },
   {
@@ -214,5 +214,41 @@
     "imagen": "/src/assets/monster.webp",
     "descripcion": "Caza enormes monstruos, fabrica equipamiento y explora ecosistemas llenos de criaturas únicas.",
     "stock": 11
+  },
+  {
+    "id": 25,
+    "nombre": "Gift Card KeyHub $5",
+    "precio": 5999,
+    "categoria": "Gift Cards",
+    "imagen": "/src/assets/giftcard-5.webp",
+    "descripcion": "Gift Card de KeyHub con un valor de $5 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
+  },
+  {
+    "id": 26,
+    "nombre": "Gift Card KeyHub $10",
+    "precio": 11999,
+    "categoria": "Gift Cards",
+    "imagen": "/src/assets/giftcard-10.webp",
+    "descripcion": "Gift Card de KeyHub con un valor de $10 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
+  },
+  {
+    "id": 27,
+    "nombre": "Gift Card KeyHub $20",
+    "precio": 23999,
+    "categoria": "Gift Cards",
+    "imagen": "/src/assets/giftcard-20.webp",
+    "descripcion": "Gift Card de KeyHub con un valor de $20 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
+  },
+  {
+    "id": 28,
+    "nombre": "Gift Card KeyHub $50",
+    "precio": 59999,
+    "categoria": "Gift Cards",
+    "imagen": "/src/assets/giftcard-50.webp",
+    "descripcion": "Gift Card de KeyHub con un valor de $50 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
   }
 ]
