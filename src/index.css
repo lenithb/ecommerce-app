@@ -1,5 +1,10 @@
 @import "tailwindcss";
 
+@theme {
+  --font-sans: "Geist Variable", system-ui, "Segoe UI", sans-serif;
+  --font-mono: "Geist Mono Variable", ui-monospace, Consolas, monospace;
+}
+
 /* KeySpot — tema oscuro monocromo, extraído del logo (negro puro, blanco, grises) */
 :root {
   --bg: #060607;
@@ -20,9 +25,9 @@
   --shadow:
     rgba(0, 0, 0, 0.55) 0 10px 30px -10px, rgba(0, 0, 0, 0.4) 0 4px 12px -6px;
 
-  --sans: system-ui, "Segoe UI", Roboto, sans-serif;
-  --heading: system-ui, "Segoe UI", Roboto, sans-serif;
-  --mono: ui-monospace, Consolas, monospace;
+  --sans: "Geist Variable", system-ui, "Segoe UI", sans-serif;
+  --heading: "Geist Variable", system-ui, "Segoe UI", sans-serif;
+  --mono: "Geist Mono Variable", ui-monospace, Consolas, monospace;
 
   font: 18px/145% var(--sans);
   letter-spacing: 0.18px;

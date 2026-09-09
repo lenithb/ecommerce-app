@@ -15,18 +15,12 @@ export const Navbar = () => {
       className="w-full text-slate-100 border-b sticky top-0 z-50 font-sans"
     >
       <div className="w-full px-6 md:px-8 h-16 flex items-center justify-between">
-        <Link to="/" className="flex items-center gap-3 group select-none py-1">
+        <Link to="/" className="flex items-center group select-none py-1">
           <img
-            src="/images/logo.png"
-            alt="Logo de KeySpot"
-            className="h-10 w-10 rounded-xl object-cover transition-transform duration-200 group-hover:scale-105"
+            src="/images/logo-wide.png"
+            alt="KeySpot"
+            className="h-8 w-auto object-contain transition-transform duration-200 group-hover:scale-105"
           />
-          <span
-            style={{ color: "var(--text-h)" }}
-            className="uppercase text-xs font-black tracking-[0.2em]"
-          >
-            KeySpot
-          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-bold">
@@ -73,10 +67,23 @@ export const Navbar = () => {
           {/* Carrito con indicador adaptado */}
           <Link
             to="/cart"
-            style={{ color: "var(--text)" }}
-            className="relative p-1 hover:text-[var(--text-h)] transition-colors text-lg"
+            style={{ color: "var(--accent)" }}
+            className="relative p-1 hover:opacity-75 transition-opacity"
           >
-            🛒
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              viewBox="0 0 24 24"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+              className="h-5 w-5"
+            >
+              <circle cx="8" cy="21" r="1" />
+              <circle cx="19" cy="21" r="1" />
+              <path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12" />
+            </svg>
             <span
               style={{
                 backgroundColor: "var(--text-h)",
