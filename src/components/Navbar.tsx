@@ -6,8 +6,13 @@ export const Navbar = () => {
 
   return (
     <nav
-      style={{ background: "var(--bg)", borderColor: "var(--border)" }}
-      className="w-full text-slate-100 border-b sticky top-0 z-50 font-sans shadow-[var(--shadow)]"
+      style={{
+        background: "var(--glass)",
+        borderColor: "var(--glass-border)",
+        backdropFilter: "var(--glass-blur)",
+        WebkitBackdropFilter: "var(--glass-blur)",
+      }}
+      className="w-full text-slate-100 border-b sticky top-0 z-50 font-sans"
     >
       <div className="w-full px-6 md:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group select-none py-1">
@@ -104,7 +109,12 @@ export const Navbar = () => {
       {/* --- MENÚ DESPLEGABLE MÓVIL --- */}
       {menuAbierto && (
         <div
-          style={{ background: "var(--code-bg)", borderColor: "var(--border)" }}
+          style={{
+            background: "var(--glass-strong)",
+            borderColor: "var(--glass-border)",
+            backdropFilter: "var(--glass-blur)",
+            WebkitBackdropFilter: "var(--glass-blur)",
+          }}
           className="md:hidden border-t w-full"
         >
           <div className="flex flex-col p-6 space-y-4 text-xs uppercase tracking-widest font-bold">
