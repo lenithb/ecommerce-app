@@ -11,36 +11,28 @@ export const Navbar = () => {
     >
       <div className="w-full px-6 md:px-8 h-16 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3 group select-none py-1">
-          <div
-            style={{
-              background: "var(--accent)",
-              boxShadow: "0 0 15px var(--accent-border)",
-            }}
-            className="relative flex items-center justify-center text-white font-black text-sm tracking-tighter w-10 h-10 rounded-xl transition-transform duration-200 group-hover:scale-105"
+          <img
+            src="/images/logo.png"
+            alt="Logo de KeySpot"
+            className="h-10 w-10 rounded-xl object-cover transition-transform duration-200 group-hover:scale-105"
+          />
+          <span
+            style={{ color: "var(--text-h)" }}
+            className="uppercase text-xs font-black tracking-[0.2em]"
           >
-            <span className="transform -translate-y-0.5 -translate-x-0.5 text-xs font-black">
-              L·AC
-            </span>
-          </div>
-
-          <div className="uppercase">
-            <span
-              style={{ color: "var(--text-h)" }}
-              className="text-xs font-black tracking-[0.2em]"
-            >
-              LEGADO AC
-            </span>
-          </div>
+            KeySpot
+          </span>
         </Link>
 
         <div className="hidden md:flex items-center gap-8 text-xs uppercase tracking-widest font-bold">
           <NavLink
             to="/"
             className={({ isActive }) =>
-              `transition-colors duration-200 ${isActive ? "font-black" : "hover:text-[var(--text-h)]"}`
+              `transition-colors duration-200 ${isActive ? "font-black underline underline-offset-8 decoration-2" : "hover:text-[var(--text-h)]"}`
             }
             style={({ isActive }) => ({
-              color: isActive ? "var(--accent)" : "var(--text)",
+              color: isActive ? "var(--text-h)" : "var(--text)",
+              textDecorationColor: "var(--text-h)",
             })}
           >
             Tienda
@@ -48,10 +40,11 @@ export const Navbar = () => {
           <NavLink
             to="/categories/lanzamientos"
             className={({ isActive }) =>
-              `transition-colors duration-200 ${isActive ? "font-black" : "hover:text-[var(--text-h)]"}`
+              `transition-colors duration-200 ${isActive ? "font-black underline underline-offset-8 decoration-2" : "hover:text-[var(--text-h)]"}`
             }
             style={({ isActive }) => ({
-              color: isActive ? "var(--accent)" : "var(--text)",
+              color: isActive ? "var(--text-h)" : "var(--text)",
+              textDecorationColor: "var(--text-h)",
             })}
           >
             Novedades
@@ -59,10 +52,11 @@ export const Navbar = () => {
           <NavLink
             to="/categories/ofertas"
             className={({ isActive }) =>
-              `transition-colors duration-200 ${isActive ? "font-black" : "hover:text-[var(--text-h)]"}`
+              `transition-colors duration-200 ${isActive ? "font-black underline underline-offset-8 decoration-2" : "hover:text-[var(--text-h)]"}`
             }
             style={({ isActive }) => ({
-              color: isActive ? "var(--accent)" : "var(--text)",
+              color: isActive ? "var(--text-h)" : "var(--text)",
+              textDecorationColor: "var(--text-h)",
             })}
           >
             Ofertas
@@ -80,7 +74,7 @@ export const Navbar = () => {
             🛒
             <span
               style={{
-                backgroundColor: "var(--accent)",
+                backgroundColor: "var(--text-h)",
                 boxShadow: "0 0 0 2px var(--bg)",
               }}
               className="absolute top-1 right-1 h-2 w-2 rounded-full"

@@ -217,38 +217,38 @@
   },
   {
     "id": 25,
-    "nombre": "Gift Card KeyHub $5",
+    "nombre": "Gift Card KeySpot $5",
     "precio": 5999,
     "categoria": "Gift Cards",
     "imagen": "/images/giftcard-5.png",
-    "descripcion": "Gift Card de KeyHub con un valor de $5 USD para utilizar en productos digitales disponibles en la tienda.",
+    "descripcion": "Gift Card de KeySpot con un valor de $5 USD para utilizar en productos digitales disponibles en la tienda.",
     "stock": 50
   },
   {
     "id": 26,
-    "nombre": "Gift Card KeyHub $10",
+    "nombre": "Gift Card KeySpot $10",
     "precio": 11999,
     "categoria": "Gift Cards",
     "imagen": "/images/giftcard-10.png",
-    "descripcion": "Gift Card de KeyHub con un valor de $10 USD para utilizar en productos digitales disponibles en la tienda.",
+    "descripcion": "Gift Card de KeySpot con un valor de $10 USD para utilizar en productos digitales disponibles en la tienda.",
     "stock": 50
   },
   {
     "id": 27,
-    "nombre": "Gift Card KeyHub $20",
+    "nombre": "Gift Card KeySpot $20",
     "precio": 23999,
     "categoria": "Gift Cards",
     "imagen": "/images/giftcard-20.png",
-    "descripcion": "Gift Card de KeyHub con un valor de $20 USD para utilizar en productos digitales disponibles en la tienda.",
+    "descripcion": "Gift Card de KeySpot con un valor de $20 USD para utilizar en productos digitales disponibles en la tienda.",
     "stock": 50
   },
   {
     "id": 28,
-    "nombre": "Gift Card KeyHub $50",
+    "nombre": "Gift Card KeySpot $50",
     "precio": 59999,
     "categoria": "Gift Cards",
     "imagen": "/images/giftcard-50.png",
-    "descripcion": "Gift Card de KeyHub con un valor de $50 USD para utilizar en productos digitales disponibles en la tienda.",
+    "descripcion": "Gift Card de KeySpot con un valor de $50 USD para utilizar en productos digitales disponibles en la tienda.",
     "stock": 50
   }
 ]

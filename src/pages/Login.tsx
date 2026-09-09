@@ -33,19 +33,17 @@ const Login = () => {
         className="w-full max-w-md p-8 rounded-2xl shadow-[var(--shadow)] border"
       >
         <div className="flex flex-col items-center mb-8 select-none">
-          <div
-            style={{
-              background: "var(--accent)",
-              boxShadow: "0 0 25px var(--accent-border)",
-            }}
-            className="relative flex items-center justify-center text-white font-black text-xl tracking-tighter w-14 h-14 rounded-2xl mb-4 bg-[var(--accent)]"
+          <img
+            src="/images/logo.png"
+            alt="Logo de KeySpot"
+            className="w-14 h-14 rounded-2xl object-cover mb-4"
+          />
+          <span
+            style={{ color: "var(--text)" }}
+            className="text-[11px] font-black tracking-[0.3em] uppercase mb-2"
           >
-            <span className="transform -translate-y-0.5 -translate-x-0.5 text-sm font-black">
-              L·AC
-            </span>
-          </div>
-
-          {/* Corrección: Corregido espacio en el string de la variable CSS */}
+            KeySpot
+          </span>
           <h1
             style={{ color: "var(--text-h)" }}
             className="text-xl font-black tracking-[0.2em] uppercase"
@@ -75,7 +73,7 @@ const Login = () => {
                 borderColor: "var(--border)",
                 background: "var(--bg)",
               }}
-              className="w-full border rounded-xl px-4 py-3 text-sm placeholder-slate-500 transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+              className="w-full border rounded-xl px-4 py-3 text-sm placeholder-slate-500 transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--text-h)] focus:ring-1 focus:ring-[var(--text-h)]"
               type="email"
               placeholder="Escribe tu correo electrónico"
               value={correo}
@@ -98,7 +96,7 @@ const Login = () => {
                 borderColor: "var(--border)",
                 background: "var(--bg)",
               }}
-              className="w-full border rounded-xl px-4 py-3 text-sm placeholder-slate-500 transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--accent)] focus:ring-1 focus:ring-[var(--accent)]"
+              className="w-full border rounded-xl px-4 py-3 text-sm placeholder-slate-500 transition-all duration-200 outline-none focus:outline-none focus:!border-[var(--text-h)] focus:ring-1 focus:ring-[var(--text-h)]"
               type="password"
               placeholder="••••••••"
               value={password}
@@ -108,10 +106,9 @@ const Login = () => {
           </div>
 
           <div className="pt-2 grid">
-            {/* El botón principal ahora usa tu color primario y el texto se adapta a tu fondo */}
             <button
-              style={{ backgroundColor: "var(--accent)", color: "var(--bg)" }}
-              className="w-full font-black text-xs uppercase py-3.5 px-4 rounded-xl transition-all duration-200 cursor-pointer shadow-[0_4px_15px_var(--accent-border)] hover:opacity-90 transform active:scale-[0.99]"
+              style={{ backgroundColor: "var(--text-h)", color: "var(--bg)" }}
+              className="w-full font-black text-xs uppercase py-3.5 px-4 rounded-xl transition-all duration-200 cursor-pointer shadow-[var(--shadow)] hover:opacity-90 transform active:scale-[0.99]"
             >
               Iniciar
             </button>
@@ -126,7 +123,7 @@ const Login = () => {
             ¿Problemas con el servidor?{" "}
             <Link
               to="*"
-              style={{ color: "var(--accent)" }}
+              style={{ color: "var(--text-h)" }}
               className="font-black hover:underline transition-colors ml-1"
             >
               Soporte Técnico
