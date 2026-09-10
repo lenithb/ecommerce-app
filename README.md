@@ -4,6 +4,8 @@
 
 E-commerce de videojuegos (tienda de keys) desarrollado como proyecto educativo con **React 19 + TypeScript + Vite + Tailwind CSS 4**. Es una SPA con ruteo client-side, contexto de autenticación y manejo de estado global con Context API.
 
+🔗 Demo en vivo: [key-spot.vercel.app](https://key-spot.vercel.app)
+
 ![Captura del proyecto](public/screen.png)
 
 ## Stack
