@@ -24,11 +24,13 @@ function readStoredSession(): StoredSession {
 export function AuthProvider({ children }: { children: ReactNode }) {
   const [session, setSession] = useState<StoredSession>(readStoredSession);
 
-  // este placeholder solo acepta cualquier email/password no vacío
+  // placeholder: acepta cualquier credencial no vacía, pero solo un correo
+  // que empiece con "admin" (ej: admin@keyspot.com) otorga sesión de administrador
   const login = (email: string, password: string) => {
     const ok = email.length > 0 && password.length > 0;
+    const esAdmin = email.trim().toLowerCase().startsWith("admin");
     const next: StoredSession = ok
-      ? { user: email, isAdmin: true }
+      ? { user: email, isAdmin: esAdmin }
       : { user: null, isAdmin: false };
     setSession(next);
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
