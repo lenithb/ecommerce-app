@@ -1,13 +1,36 @@
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import type { Product } from "../interfaces/Product";
+import { CurrencyContext, TASA_ARS_POR_USD } from "../context/CurrencyContext";
 
-const precioCLP = new Intl.NumberFormat("es-CL", {
+const precioARS = new Intl.NumberFormat("es-AR", {
   style: "currency",
-  currency: "CLP",
+  currency: "ARS",
+  maximumFractionDigits: 0,
+});
+
+const precioUSD = new Intl.NumberFormat("en-US", {
+  style: "currency",
+  currency: "USD",
   maximumFractionDigits: 0,
 });
 
 export function ProductCard({ product }: { product: Product }) {
+  const ctx = useContext(CurrencyContext);
+  const moneda = ctx?.moneda ?? "ARS";
+  const [agregado, setAgregado] = useState(false);
+
+  const precio =
+    moneda === "USD"
+      ? precioUSD.format(product.price / TASA_ARS_POR_USD)
+      : precioARS.format(product.price);
+
+  const agregarAlCarrito = (e: React.MouseEvent) => {
+    e.preventDefault();
+    e.stopPropagation();
+    setAgregado(true);
+    window.setTimeout(() => setAgregado(false), 1500);
+  };
   const agotado = product.stock <= 0;
   const ultimasUnidades = !agotado && product.stock <= 6;
 
@@ -66,21 +89,29 @@ export function ProductCard({ product }: { product: Product }) {
           </p>
 
           <div className="mt-4 flex items-center justify-between gap-3">
-            <span style={{ color: "var(--text-h)" }} className="text-lg font-black tabular-nums">
-              {precioCLP.format(product.price)}
+            <span style={{ color: "var(--text-h)" }} className="text-lg font-black tabular-nums whitespace-nowrap">
+              {precio}
             </span>
-            <span
-              style={
-                agotado
-                  ? { color: "var(--text)", borderColor: "var(--border)" }
-                  : { backgroundColor: "var(--text-h)", color: "var(--bg)" }
-              }
-              className={`px-3.5 py-2 rounded-xl border text-[10px] font-black uppercase tracking-widest transition-opacity ${
-                agotado ? "" : "group-hover:opacity-90"
-              }`}
-            >
-              {agotado ? "No disponible" : "Comprar"}
-            </span>
+            {agotado ? (
+              <span
+                style={{ color: "var(--text)", borderColor: "var(--border)" }}
+                className="px-3.5 py-2 rounded-xl border text-[10px] font-black uppercase tracking-widest"
+              >
+                No disponible
+              </span>
+            ) : (
+              <button
+                onClick={agregarAlCarrito}
+                style={
+                  agregado
+                    ? { borderColor: "var(--accent-border)", color: "var(--text-h)", background: "var(--accent-bg)" }
+                    : { backgroundColor: "var(--text-h)", color: "var(--bg)" }
+                }
+                className="px-3.5 py-2 rounded-xl text-[10px] font-black uppercase tracking-widest transition-all duration-200 hover:opacity-90 cursor-pointer whitespace-nowrap"
+              >
+                {agregado ? "¡Agregado! ✓" : "Agregar al carrito"}
+              </button>
+            )}
           </div>
         </div>
       </Link>

@@ -5,11 +5,11 @@ import { Home } from "./pages/Home";
 import { Novedades } from "./pages/Novedades";
 import { AdminPanel } from "./pages/AdminPanel";
 import { ProductDetail } from "./pages/ProductDetail";
-import { About } from "./pages/About";
 import Login from "./pages/Login";
-import { NotFound } from "./pages/NotFound";
+import { NotFound } from "./pages/404error";
 import { AuthProvider } from "./context/AuthProvider";
 import { ProductProvider } from "./context/ProductProvider";
+import { CurrencyProvider } from "./context/CurrencyProvider";
 
 // acá en teoría ya estan todos los imports, no se olviden que esto es SPA (una sola pagina).
 
@@ -17,13 +17,14 @@ function App() {
   return (
     <AuthProvider>
       <ProductProvider>
-        <BrowserRouter>
+        <CurrencyProvider>
+          <BrowserRouter>
           <Navbar />
           <Routes>
             <Route path="/" element={<Home />} />
             <Route path="/categories/novedades" element={<Novedades />} />
             <Route path="/product/:id" element={<ProductDetail />} />
-            <Route path="/about" element={<About />} />
+            <Route path="/categories/ofertas" element={<NotFound />} />
             <Route path="/login" element={<Login />} />
             <Route
               path="/admin"
@@ -35,7 +36,8 @@ function App() {
             />
             <Route path="*" element={<NotFound />} />
           </Routes>
-        </BrowserRouter>
+          </BrowserRouter>
+        </CurrencyProvider>
       </ProductProvider>
     </AuthProvider>
   );

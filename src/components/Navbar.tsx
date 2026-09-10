@@ -1,8 +1,12 @@
-import { useState } from "react";
-import { Link, NavLink } from "react-router-dom";
+import { useState, useContext } from "react";
+import { Link, NavLink, useLocation } from "react-router-dom";
+import { CurrencyContext } from "../context/CurrencyContext";
 
 export const Navbar = () => {
   const [menuAbierto, setMenuAbierto] = useState(false);
+  const { pathname } = useLocation();
+  const ctx = useContext(CurrencyContext);
+  const enHome = pathname === "/";
 
   return (
     <nav
@@ -64,6 +68,22 @@ export const Navbar = () => {
 
         {/* ACCIONES DE LA DERECHA */}
         <div className="flex items-center gap-5">
+          {/* Selector de moneda (solo visible en el home) */}
+          {enHome && ctx && (
+            <button
+              onClick={ctx.alternarMoneda}
+              style={{ color: "var(--text)", borderColor: "var(--border)" }}
+              className="flex items-center gap-1.5 rounded-full border px-3 py-1.5 text-xs font-black uppercase tracking-wider hover:text-[var(--text-h)] hover:!border-[var(--text-h)] transition-colors cursor-pointer select-none"
+              aria-label={`Cambiar moneda. Moneda actual: ${ctx.moneda}`}
+              title={ctx.moneda === "ARS" ? "Ver precios en dólares" : "Ver precios en pesos"}
+            >
+              <span className="text-base leading-none">
+                {ctx.moneda === "ARS" ? "🇦🇷" : "🇺🇸"}
+              </span>
+              {ctx.moneda}
+            </button>
+          )}
+
           {/* Carrito con indicador adaptado */}
           <Link
             to="/cart"
