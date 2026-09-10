@@ -37,7 +37,7 @@ export const Navbar = () => {
             Tienda
           </NavLink>
           <NavLink
-            to="/categories/lanzamientos"
+            to="/categories/novedades"
             className={({ isActive }) =>
               `transition-colors duration-200 ${isActive ? "font-black underline underline-offset-8 decoration-2" : "hover:text-[var(--text-h)]"}`
             }
@@ -134,7 +134,7 @@ export const Navbar = () => {
               Tienda
             </Link>
             <Link
-              to="/categories/lanzamientos"
+              to="/categories/novedades"
               onClick={() => setMenuAbierto(false)}
               style={{ color: "var(--text)" }}
               className="hover:text-[var(--text-h)] py-1"

@@ -5,6 +5,15 @@
   --font-mono: "Geist Mono Variable", ui-monospace, Consolas, monospace;
 }
 
+@keyframes marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
 /* KeySpot — tema oscuro monocromo, extraído del logo (negro puro, blanco, grises) */
 :root {
   --bg: #060607;
