@@ -27,29 +27,25 @@ const Login = () => {
   };
 
   return (
-    <div className="w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans">
+    <div className="relative w-full flex items-center justify-center py-12 px-4 sm:px-6 lg:px-8 font-sans overflow-hidden">
       <div
-        style={{ background: "var(--code-bg)", borderColor: "var(--border)" }}
-        className="w-full max-w-md p-8 rounded-2xl shadow-[var(--shadow)] border"
+        aria-hidden
+        className="pointer-events-none absolute -top-32 left-1/2 -translate-x-1/2 w-[420px] h-[420px] rounded-full bg-white/5 blur-3xl"
+      />
+      <div
+        style={{ background: "#0b0b0d", borderColor: "var(--border)" }}
+        className="relative w-full max-w-md p-8 sm:p-10 rounded-3xl shadow-[var(--shadow)] border ring-1 ring-white/5"
       >
         <div className="flex flex-col items-center mb-8 select-none">
-          <img
-            src="/images/logo.png"
-            alt="Logo de KeySpot"
-            className="w-14 h-14 rounded-2xl object-cover mb-4"
-          />
-          <span
-            style={{ color: "var(--text)" }}
-            className="text-[11px] font-black tracking-[0.3em] uppercase mb-2"
-          >
-            KeySpot
-          </span>
           <h1
             style={{ color: "var(--text-h)" }}
-            className="text-xl font-black tracking-[0.2em] uppercase"
+            className="text-2xl font-black tracking-[0.18em] uppercase"
           >
             Inicio de sesión
           </h1>
+          <p style={{ color: "var(--text)" }} className="mt-2 text-xs font-medium tracking-wide">
+            Accede a tu cuenta para continuar
+          </p>
         </div>
 
         {errorVisible && (
