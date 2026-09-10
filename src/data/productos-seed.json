@@ -1,0 +1,254 @@
+[
+  {
+    "id": 1,
+    "nombre": "Cyberpunk 2077",
+    "precio": 29999,
+    "categoria": "RPG",
+    "imagen": "/images/cyber.webp",
+    "descripcion": "Un RPG de mundo abierto ambientado en Night City, una enorme ciudad futurista llena de peligros, tecnología y oportunidades.",
+    "stock": 12
+  },
+  {
+    "id": 2,
+    "nombre": "Red Dead Redemption 2",
+    "precio": 24999,
+    "categoria": "Acción",
+    "imagen": "/images/red.webp",
+    "descripcion": "Una aventura de acción y mundo abierto ambientada en el salvaje oeste americano.",
+    "stock": 8
+  },
+  {
+    "id": 3,
+    "nombre": "Grand Theft Auto VI",
+    "precio": 19999,
+    "categoria": "Acción",
+    "imagen": "/images/gta.webp",
+    "descripcion": "Reserva ahora la increíble aventura de Miami.",
+    "stock": 20
+  },
+  {
+    "id": 4,
+    "nombre": "Elden Ring",
+    "precio": 32999,
+    "categoria": "RPG",
+    "imagen": "/images/elden.webp",
+    "descripcion": "Un RPG de acción desarrollado en un enorme mundo de fantasía lleno de enemigos y misterios.",
+    "stock": 6
+  },
+  {
+    "id": 5,
+    "nombre": "Minecraft",
+    "precio": 15999,
+    "categoria": "Aventura",
+    "imagen": "/images/mc.webp",
+    "descripcion": "Construye, explora y sobrevive en un mundo generado proceduralmente lleno de posibilidades.",
+    "stock": 25
+  },
+  {
+    "id": 6,
+    "nombre": "The Witcher 3: Wild Hunt",
+    "precio": 17999,
+    "categoria": "RPG",
+    "imagen": "/images/tw3.webp",
+    "descripcion": "Acompaña a Geralt de Rivia en una aventura épica por un enorme mundo abierto.",
+    "stock": 15
+  },
+  {
+    "id": 7,
+    "nombre": "Forza Horizon 6",
+    "precio": 27999,
+    "categoria": "Carreras",
+    "imagen": "/images/fh6.webp",
+    "descripcion": "Disfruta de carreras a toda velocidad en un enorme mundo abierto inspirado en Tokyo.",
+    "stock": 10
+  },
+  {
+    "id": 8,
+    "nombre": "Hogwarts Legacy",
+    "precio": 26999,
+    "categoria": "Aventura",
+    "imagen": "/images/hogwarts.webp",
+    "descripcion": "Descubre el mundo mágico de Hogwarts y domina hechizos mientras exploras un enorme mundo abierto.",
+    "stock": 9
+  },
+  {
+    "id": 9,
+    "nombre": "Resident Evil 4",
+    "precio": 22999,
+    "categoria": "Terror",
+    "imagen": "/images/re4.webp",
+    "descripcion": "Una aventura de supervivencia y terror en la que deberás enfrentarte a numerosos enemigos.",
+    "stock": 7
+  },
+  {
+    "id": 10,
+    "nombre": "EA Sports FC 26",
+    "precio": 34999,
+    "categoria": "Deportes",
+    "imagen": "/images/fc26.webp",
+    "descripcion": "Disfruta del fútbol con cientos de equipos, competiciones y diferentes modos de juego.",
+    "stock": 18
+  },
+  {
+    "id": 11,
+    "nombre": "God of War",
+    "precio": 21999,
+    "categoria": "Acción",
+    "imagen": "/images/gow.webp",
+    "descripcion": "Kratos y Atreus emprenden un viaje por los reinos de la mitología nórdica.",
+    "stock": 11
+  },
+  {
+    "id": 12,
+    "nombre": "Hades",
+    "precio": 12999,
+    "categoria": "Roguelike",
+    "imagen": "/images/ha.webp",
+    "descripcion": "Lucha para escapar del inframundo en este dinámico juego de acción y exploración.",
+    "stock": 30
+  },
+  {
+    "id": 13,
+    "nombre": "Baldur's Gate 3",
+    "precio": 39999,
+    "categoria": "RPG",
+    "imagen": "/images/baldursgate3.webp",
+    "descripcion": "Un RPG de fantasía con una enorme libertad de elección, combates estratégicos y una historia llena de personajes memorables.",
+    "stock": 8
+  },
+  {
+    "id": 14,
+    "nombre": "DOOM Eternal",
+    "precio": 18999,
+    "categoria": "Acción",
+    "imagen": "/images/doometernal.webp",
+    "descripcion": "Enfréntate a hordas de demonios en combates frenéticos mientras recorres escenarios llenos de acción.",
+    "stock": 14
+  },
+  {
+    "id": 15,
+    "nombre": "Hollow Knight",
+    "precio": 9999,
+    "categoria": "Metroidvania",
+    "imagen": "/images/hn.webp",
+    "descripcion": "Explora un misterioso reino subterráneo lleno de criaturas, secretos y desafiantes combates.",
+    "stock": 22
+  },
+  {
+    "id": 16,
+    "nombre": "Sekiro: Shadows Die Twice",
+    "precio": 24999,
+    "categoria": "Acción",
+    "imagen": "/images/sekiro.webp",
+    "descripcion": "Conviértete en un guerrero shinobi y domina un sistema de combate exigente en el Japón feudal.",
+    "stock": 7
+  },
+  {
+    "id": 17,
+    "nombre": "Lies of P",
+    "precio": 27999,
+    "categoria": "RPG",
+    "imagen": "/images/lies.webp",
+    "descripcion": "Una aventura de acción inspirada en Pinocho, ambientada en una oscura y misteriosa ciudad de estilo victoriano.",
+    "stock": 10
+  },
+  {
+    "id": 18,
+    "nombre": "Terraria",
+    "precio": 7999,
+    "categoria": "Sandbox",
+    "imagen": "/images/terraria.webp",
+    "descripcion": "Explora, construye, fabrica objetos y enfréntate a numerosos enemigos en un mundo lleno de posibilidades.",
+    "stock": 35
+  },
+  {
+    "id": 19,
+    "nombre": "Dead Space",
+    "precio": 22999,
+    "categoria": "Terror",
+    "imagen": "/images/dead.webp",
+    "descripcion": "Sobrevive a una aterradora experiencia de ciencia ficción mientras exploras una nave espacial abandonada.",
+    "stock": 9
+  },
+  {
+    "id": 20,
+    "nombre": "Dying Light 2",
+    "precio": 21999,
+    "categoria": "Acción",
+    "imagen": "/images/dying.webp",
+    "descripcion": "Explora una ciudad devastada por una epidemia mientras combates zombis y recorres sus edificios mediante parkour.",
+    "stock": 13
+  },
+  {
+    "id": 21,
+    "nombre": "Subnautica",
+    "precio": 11999,
+    "categoria": "Supervivencia",
+    "imagen": "/images/sub.webp",
+    "descripcion": "Explora un planeta oceánico alienígena, consigue recursos y construye tu propia base para sobrevivir.",
+    "stock": 18
+  },
+  {
+    "id": 22,
+    "nombre": "The Last of Us Part I",
+    "precio": 29999,
+    "categoria": "Aventura",
+    "imagen": "/images/thelast.webp",
+    "descripcion": "Acompaña a Joel y Ellie en un peligroso viaje a través de un mundo devastado por una pandemia.",
+    "stock": 6
+  },
+  {
+    "id": 23,
+    "nombre": "Horizon Zero Dawn",
+    "precio": 19999,
+    "categoria": "Aventura",
+    "imagen": "/images/horizon.webp",
+    "descripcion": "Descubre un mundo postapocalíptico dominado por enormes criaturas mecánicas mientras sigues la historia de Aloy.",
+    "stock": 12
+  },
+  {
+    "id": 24,
+    "nombre": "Monster Hunter: World",
+    "precio": 23999,
+    "categoria": "RPG",
+    "imagen": "/images/monster.webp",
+    "descripcion": "Caza enormes monstruos, fabrica equipamiento y explora ecosistemas llenos de criaturas únicas.",
+    "stock": 11
+  },
+  {
+    "id": 25,
+    "nombre": "Gift Card KeySpot $5",
+    "precio": 5999,
+    "categoria": "Gift Cards",
+    "imagen": "/images/giftcard-5.png",
+    "descripcion": "Gift Card de KeySpot con un valor de $5 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
+  },
+  {
+    "id": 26,
+    "nombre": "Gift Card KeySpot $10",
+    "precio": 11999,
+    "categoria": "Gift Cards",
+    "imagen": "/images/giftcard-10.png",
+    "descripcion": "Gift Card de KeySpot con un valor de $10 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
+  },
+  {
+    "id": 27,
+    "nombre": "Gift Card KeySpot $20",
+    "precio": 23999,
+    "categoria": "Gift Cards",
+    "imagen": "/images/giftcard-20.png",
+    "descripcion": "Gift Card de KeySpot con un valor de $20 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
+  },
+  {
+    "id": 28,
+    "nombre": "Gift Card KeySpot $50",
+    "precio": 59999,
+    "categoria": "Gift Cards",
+    "imagen": "/images/giftcard-50.png",
+    "descripcion": "Gift Card de KeySpot con un valor de $50 USD para utilizar en productos digitales disponibles en la tienda.",
+    "stock": 50
+  }
+]

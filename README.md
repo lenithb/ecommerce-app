@@ -1,75 +1,57 @@
-# React + TypeScript + Vite
+![KeySpot Banner](public/banner1.webp)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+# KeySpot 🎮
 
-Currently, two official plugins are available:
+E-commerce de videojuegos (tienda de keys) desarrollado como proyecto educativo con **React 19 + TypeScript + Vite + Tailwind CSS 4**. Es una SPA con ruteo client-side, contexto de autenticación y manejo de estado global con Context API.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+![Captura del proyecto](public/screen.png)
 
-## React Compiler
+## Stack
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+| Tecnología            | Uso                                  |
+| --------------------- | ------------------------------------ |
+| React 19 + TypeScript | UI y tipado                          |
+| Vite                  | Build y dev server                   |
+| Tailwind CSS 4        | Estilos (tema oscuro monocromo)      |
+| React Router 7        | Ruteo SPA + rutas protegidas         |
+| canvas-confetti       | Animación de recompensa en Novedades |
 
-## Expanding the ESLint configuration
+## Cómo usarlo
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-
+```bash
+pnpm install
+pnpm dev      # entorno de desarrollo
+pnpm build    # typecheck + build de producción
+pnpm lint     # eslint
 ```
 
-You can also install [eslint-plugin-react-x](https://npmx.dev/package/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://npmx.dev/package/eslint-plugin-react-dom) for React-specific lint rules:
+No necesita backend por ahora: los productos cargan desde un seed local (`src/data/productos-seed.json`) y la sesión se simula con `AuthProvider`.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+## Lo que está hecho
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+- **Catálogo** con buscador en vivo, filtros por categoría y tarjetas con estado de stock (agotado / últimas unidades).
+- **Ruteo SPA**: tienda, novedades, ofertas, login, admin y página 404 propia (también para rutas inexistentes).
+- **Panel de admin** protegido con `ProtectedRoute` (CRUD de productos sobre el contexto).
+- **Novedades**: ruleta con video que aparece una sola vez por usuario (persistido en localStorage) y gift card con confetti al finalizar.
+- **Selector de moneda** 🇦🇷|🇺🇸 en el navbar (solo en el home) que convierte todos los precios con `Intl.NumberFormat`.
+- **Hook propio** `useLocalStorage<T>` reutilizado para preferencias y flags.
 
+## Lo que falta
+
+- [ ] Página de detalle de producto (`/product/:id` está ruteada pero sin implementar).
+- [ ] Carrito real: el botón "Agregar al carrito" hoy solo da feedback visual, falta el estado/contexto y la página `/cart`.
+- [ ] Autenticación real (hoy es simulada con datos locales, sin backend ni tokens).
+- [ ] Página de Ofertas con contenido propio.
+- [ ] Pagos (por ahora la gift card solo redirige a login).
+- [ ] Persistencia de productos fuera del estado en memoria.
+
+## Estructura
+
+```
+src/
+├── components/   Navbar, ProductCard, SearchBar, ProtectedRoute
+├── context/      Auth, Product y Currency (provider + contexto)
+├── hooks/        useLocalStorage, useProduct
+├── interfaces/   Product, User
+└── pages/        Home, Novedades, Login, AdminPanel, 404error, ProductDetail
 ```
