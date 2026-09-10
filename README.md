@@ -33,7 +33,7 @@ No necesita backend por ahora: los productos cargan desde un seed local (`src/da
 
 - **Catálogo** con buscador en vivo, filtros por categoría y tarjetas con estado de stock (agotado / últimas unidades).
 - **Ruteo SPA**: tienda, novedades, ofertas, login, admin y página 404 propia (también para rutas inexistentes).
-- **Panel de admin** protegido con `ProtectedRoute` (CRUD de productos sobre el contexto).
+- **Panel de admin** protegido con `ProtectedRoute`: si escribís `/admin` en la URL sin sesión de administrador, te expulsa a `/login` (el login simulado solo otorga rol admin a un correo que empiece con `admin`).
 - **Novedades**: ruleta con video que aparece una sola vez por usuario (persistido en localStorage) y gift card con confetti al finalizar.
 - **Selector de moneda** 🇦🇷|🇺🇸 en el navbar (solo en el home) que convierte todos los precios con `Intl.NumberFormat`.
 - **Hook propio** `useLocalStorage<T>` reutilizado para preferencias y flags.
@@ -42,6 +42,7 @@ No necesita backend por ahora: los productos cargan desde un seed local (`src/da
 
 - [ ] Página de detalle de producto (`/product/:id` está ruteada pero sin implementar).
 - [ ] Carrito real: el botón "Agregar al carrito" hoy solo da feedback visual, falta el estado/contexto y la página `/cart`.
+- [ ] Funcionalidad del admin: por ahora muestra la bienvenida, falta listar/editar/eliminar productos (las funciones del `ProductContext` ya están).
 - [ ] Autenticación real (hoy es simulada con datos locales, sin backend ni tokens).
 - [ ] Página de Ofertas con contenido propio.
 - [ ] Pagos (por ahora la gift card solo redirige a login).
